@@ -1929,7 +1929,7 @@ POR:
 
       /* RODAPÉ - SCROLL FINAL */
 #rodape {
-  background: #e8dfd0 !important;
+  background:  #d4d4d4 !important;
   color: #2c2c2c;
   text-align: center;
   padding: 30px 10px;
@@ -2469,7 +2469,7 @@ POR:
 }
 
 .btn-dress {
-  background: linear-gradient(135deg, #6d4830, #8b5e3c);
+  background:  linear-gradient(135deg, #a8a8a8, #8c8c8c);
   color: white;
   border: none;
   padding: 14px 45px;
@@ -3705,7 +3705,7 @@ body:has(#capa:not(.oculto)) #botaoMusica {
       </section>
 
       <!-- RODAPÉ - MANUAL DO BOM CONVIDADO -->
-<section id="rodape" class="secao" style="width: 100vw; max-width: 100%; margin: 0; padding: 60px 20px; background: #e8dfd0 !important; min-height: 100vh; display: flex; align-items: center; justify-content: center; left: 0; right: 0; position: relative;">
+<section id="rodape" class="secao" style="width: 100vw; max-width: 100%; margin: 0; padding: 60px 20px; background: #d4d4d4  !important; min-height: 100vh; display: flex; align-items: center; justify-content: center; left: 0; right: 0; position: relative;">
   <div class="conteudo-secao" style="max-width: 900px; width: 100%; margin: 0 auto;">
     
     <!-- TÍTULO PRINCIPAL -->
@@ -3799,14 +3799,15 @@ body:has(#capa:not(.oculto)) #botaoMusica {
       <!-- LISTA DE SUGESTÕES / EXPERIÊNCIAS -->
       <div class="lista-sugestoes-monetarias">
   <div class="titulo-sugestoes">Se preferir, pode direcionar o valor para:</div>
+        
 <p class="aviso-escolha-sugestao">Ao clicar em "Escolher", o item fica reservado e não poderá ser escolhido por outro convidado. </p>
-
+   <p style="text-align: center; font-weight: 700; margin: 20px 0 10px; color: var(--verde-oliva); font-size: 1.05rem;">
+  Contas bancárias abaixo
+</p>
 <div class="grid-sugestoes" id="gridSugestoesMonetarias"></div>
       </div>
 
-      <p style="text-align: center; font-weight: 700; margin: 20px 0 10px; color: var(--verde-oliva); font-size: 1.05rem;">
-  Contas bancárias abaixo
-</p>
+   
       <div class="info-pagamento-elegante">
         <div class="metodo-pagamento-elegante">
           <i class="fas fa-university"></i>
@@ -5137,9 +5138,10 @@ if (btnConfirmarPresenca) {
   font-size: 0.92rem;
   line-height: 1.35;
 }
-
 .texto-card strong {
   font-size: 1.1rem;
+  display: block;      /* faz ele quebrar para a linha de baixo */
+  margin-top: 6px;      /* um respiro entre o texto e o preço */
 }
 
 .card-sugestao button {
