@@ -3794,7 +3794,19 @@ body:has(#capa:not(.oculto)) #botaoMusica {
         onclick="fecharModalPresente('modalPresenteMonetario')"
         >&times;</span
       >
-     <h3>Presente Monetário</h3>
+   
+ <h3>Presente Monetário</h3>
+      <!-- LISTA DE SUGESTÕES / EXPERIÊNCIAS -->
+      <div class="lista-sugestoes-monetarias">
+  <div class="titulo-sugestoes">Se preferir, pode direcionar o valor para:</div>
+<p class="aviso-escolha-sugestao">Ao clicar em "Escolher", o item fica reservado e não poderá ser escolhido por outro convidado. </p>
+
+<div class="grid-sugestoes" id="gridSugestoesMonetarias"></div>
+      </div>
+
+      <p style="text-align: center; font-weight: 700; margin: 20px 0 10px; color: var(--verde-oliva); font-size: 1.05rem;">
+  Contas bancárias abaixo
+</p>
       <div class="info-pagamento-elegante">
         <div class="metodo-pagamento-elegante">
           <i class="fas fa-university"></i>
@@ -3826,21 +3838,14 @@ body:has(#capa:not(.oculto)) #botaoMusica {
           <div>
             <strong style="font-size: 1.2rem">M-Pesa</strong><br />
             <span style="font-size: 1.1rem">852411948</span><br />
-            <em style="color: var(--cinza-medio)">(Titular: Lila da Conceição Z. Guambe)</em>
+<em style="color: var(--cinza-medio)">(Titular: Lila da Conceição Z. Guambe)</em>
           </div>
         </div>
       </div>
-
-      <!-- LISTA DE SUGESTÕES / EXPERIÊNCIAS -->
-      <div class="lista-sugestoes-monetarias">
-  <div class="titulo-sugestoes">Se preferir, pode direcionar o valor para:</div>
-<p class="aviso-escolha-sugestao">Ao clicar em "Escolher", o item fica reservado e não poderá ser escolhido por outro convidado.</p>
-
- <div class="grid-sugestoes" id="gridSugestoesMonetarias"></div>
-      </div>
     </div>
-
-    <!-- POPUP MENSAGEM ENVIADA -->
+    <!-- POPUP MENSAGEM ENVIADA -->>
+   
+  
     <div id="popupMensagem" class="popup-mensagem-elegante">
       <h3>Mensagem Enviada!</h3>
       <p
@@ -5107,14 +5112,14 @@ if (btnConfirmarPresenca) {
 .grid-sugestoes {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 14px;
 }
 
 .card-sugestao {
+  padding: 18px 14px;
+  border-radius: 14px;
   background: #fff;
   border: 1px solid #ebebeb;
-  border-radius: 12px;
-  padding: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,.05);
   display: flex;
   flex-direction: column;
@@ -5123,39 +5128,42 @@ if (btnConfirmarPresenca) {
 }
 
 .card-sugestao img {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-  margin-bottom: 8px;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 12px;
 }
 
 .texto-card span {
-  font-size: 0.8rem;
-  color: var(--cinza-escuro);
-  line-height: 1.3;
-  display: block;
-  margin-bottom: 5px;
+  font-size: 0.92rem;
+  line-height: 1.35;
 }
 
 .texto-card strong {
-  font-size: 0.95rem;
-  color: var(--verde-oliva);
+  font-size: 1.1rem;
 }
 
+.card-sugestao button {
+  height: 42px;
+  font-size: 0.9rem;
+}
 @media (max-width: 480px) {
-  .grid-sugestoes { gap: 8px; }
-  .card-sugestao { padding: 8px; }
+  .grid-sugestoes { gap: 10px; }
+  .card-sugestao { padding: 14px 10px; border-radius: 12px; }
+  .card-sugestao img { width: 46px; height: 46px; margin-bottom: 10px; }
+  .texto-card span { font-size: 0.8rem; line-height: 1.3; }
+  .texto-card strong { font-size: 0.95rem; }
+  .card-sugestao button { height: 38px; font-size: 0.82rem; }
 }
 .card-sugestao button {
   margin-top: 10px;
   width: 100%;
-  height: 34px;
+  height: 42px;
   border: none;
   border-radius: 20px;
   background: var(--verde-oliva);
   color: #fff;
   font-family: "Cormorant Garamond", serif;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
