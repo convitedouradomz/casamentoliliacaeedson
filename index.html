@@ -459,7 +459,58 @@ POR:
           transform: translateX(-50%) translateY(10px);
         }
       }
+/* BÊNÇÃO - SECÇÃO INTRODUTÓRIA */
+#bencao {
+  background: #ffffff;
+  position: relative;
+}
 
+.bencao-titulo {
+  font-family: "Beau Rivage", cursive;
+  color: #000000;
+  font-size: 82px;
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0 auto 35px;
+  max-width: 680px;
+  text-align: center;
+}
+
+.bencao-texto {
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.bencao-texto p {
+  color: #000000;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 1.55;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 600px) {
+  .bencao-titulo {
+    font-size: 58px;
+    line-height: 1.15;
+    margin-bottom: 30px;
+  }
+  .bencao-texto p {
+    font-size: 21px;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 400px) {
+  .bencao-titulo {
+    font-size: 49px;
+  }
+  .bencao-texto p {
+    font-size: 19px;
+  }
+}
       /* MÚSICA E FOTO - SCROLL 2 (COM ANÉIS) */
       #musica {
         background-color: #ffffff;
@@ -1043,7 +1094,47 @@ POR:
           opacity: 1;
         }
       }
+.arco-noivos {
+  max-width: 380px;
+  height: 420px;
+}
 
+@media (max-width: 480px) {
+  .arco-noivos {
+    height: 360px;
+  }
+}
+
+.info-noivos-vertical {
+  max-width: 480px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-noivos-vertical .noiva,
+.info-noivos-vertical .noivo {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition:
+    opacity 1.2s cubic-bezier(0.19, 1, 0.22, 1),
+    transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+  min-width: unset;
+  max-width: 100%;
+  flex: none;
+  text-align: center;
+}
+
+.info-noivos-vertical .noiva.visivel,
+.info-noivos-vertical .noivo.visivel {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.info-noivos-vertical .coracao-central {
+  margin: 20px auto;
+}
  /* AGENDA - SCROLL 6 - CORRIGIDA */
 #agenda {
   background-color: #e2d7cc;
@@ -1810,7 +1901,7 @@ POR:
 
       .btn-presente-elegante {
         background: linear-gradient(135deg, var(--creme-claro), white);
-        border: 1.5px solid var(--verde-oliva-claro);
+        border: 1.5px solid #e2d7cc;
         padding: 22px 35px;
         border-radius: 12px;
         cursor: pointer;
@@ -1838,16 +1929,14 @@ POR:
         height: 3px;
         background: linear-gradient(90deg, var(--dourado), var(--verde-oliva));
       }
-
-      .btn-presente-elegante:hover {
+.btn-presente-elegante:hover {
         transform: translateY(-8px);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        border-color: var(--verde-oliva);
+        border-color: #c9b89f;
       }
-
-      .btn-presente-elegante i {
+.btn-presente-elegante i {
         font-size: 2.2rem;
-        color: var(--dourado);
+        color: #e2d7cc;
       }
 
       /* MODAIS PRESENTES */
@@ -1888,7 +1977,7 @@ POR:
         padding: 18px;
         background-color: var(--creme-claro);
         border-radius: 10px;
-        border-left: 3px solid var(--dourado);
+        border-left: 3px solid #e2d7cc;
         transition: transform 0.3s ease;
       }
 
@@ -2469,7 +2558,7 @@ POR:
 }
 
 .btn-dress {
-  background:  linear-gradient(135deg, #a8a8a8, #8c8c8c);
+  background: #c4b190;
   color: white;
   border: none;
   padding: 14px 45px;
@@ -3202,6 +3291,7 @@ body:has(#capa:not(.oculto)) #botaoMusica {
     letter-spacing: 0.2px;
   }
 }
+
 </style>
   </head>
 
@@ -3281,7 +3371,7 @@ body:has(#capa:not(.oculto)) #botaoMusica {
   <div class="conteudo-secao">
     <h2>Dois Corações, Um Caminho</h2>
    <div class="texto-destaque" style="font-size: 2.3rem; color: #000000 !important;">
-      "O amor é composto por uma única alma habitando dois corpos."
+      "Para que todos vejam, e saibam, e considerem, e juntamente entendam que a mão do senhor fez isto, e o santo de Israel o criou"
     </div>  <p
       style="
         font-size: 1.2rem;
@@ -3291,47 +3381,70 @@ body:has(#capa:not(.oculto)) #botaoMusica {
         margin: 0 auto;
       "
     >
-  — Aristóteles
+  — Isaías 41:20
     </p>
   </div>
 </section>
 
       <!-- OS NOIVOS - SCROLL 4 (AGORA APÓS ARISTÓTELES) -->
+     <!-- OS NOIVOS - SCROLL 4 (AGORA APÓS ARISTÓTELES) -->
       <section id="os-noivos" class="secao">
         <div class="conteudo-secao">
           <h2>Os Noivos</h2>
-          <div class="container-noivos">
-            <div class="noivo">
-  <div class="container-foto-noivo">
-   <img src="noivo.jpeg" alt="Edson" class="foto-noivo" />
-  </div>
-  <h3 class="nome-noivo">Edson</h3>
-              <div class="linha-pais"></div>
-              <p class="pais-preto">
-                <strong>Filho de:</strong><br />
-               Azarias Naífe Mungue<br />
-  Amélia Luís Sengo
-</p>
-            </div>
 
-            <div class="coracao-central">
-              <i class="fas fa-heart"></i>
-            </div>
+        <div class="photo-card-contador arco-noivos">
+            <img src="Foto3.jpeg" alt="Lila e Edson" />
+            <div class="overlay-info-noivos">
+              <div class="noiva">
+                <span class="nome-overlay">Lila</span>
+                <div class="linha-overlay"></div>
+                <p class="pais-overlay">
+                  <strong>Filha de:</strong><br />
+                  Zacarias Jorge Guambe<br />
+                  e<br />
+                  Olga Julião Covele
+                </p>
+              </div>
 
-            <div class="noiva">
-  <div class="container-foto-noiva">
-    <img src="noiva.jpeg" alt="Lila" class="foto-noiva" />
-  </div>
- <h3 class="nome-noiva">Lila</h3>
-<div class="linha-pais"></div>
-<p class="pais-preto">
-  <strong>Filha de:</strong><br />
-  Zacarias Jorge Guambe<br /> e Olga Julião Covele
-</p>
-</div>
-</div>
-</div>
+              <i class="fas fa-heart coracao-overlay"></i>
+
+              <div class="noivo">
+                <span class="nome-overlay">Edson</span>
+                <div class="linha-overlay"></div>
+                <p class="pais-overlay">
+                  <strong>Filho de:</strong><br />
+                  Azarias Naífe Mungue<br />
+                  Amélia Luís Sengo
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
 </section>
+
+      <!-- BÊNÇÃO - SECÇÃO INTRODUTÓRIA -->
+      <section id="bencao" class="secao">
+        <div class="conteudo-secao">
+          <h1 class="bencao-titulo">
+            <strong>Com a benção de<br />
+            Deus e de seus<br />
+            pais,</strong>
+          </h1>
+          <div class="bencao-texto">
+            <p>
+              Temos a honra de convidá-lo (a)<br />
+              para comemorar esta data<br />
+              especial connosco.
+            </p>
+            <p>
+              Venha juntar-se a nós e juntos<br />
+              celebrar o nosso enlace<br />
+              matrimonial de acordo com a<br />
+              agenda abaixo:
+            </p>
+          </div>
+        </div>
+      </section>
 
       <!-- SAUDAÇÃO - SCROLL 5 -->
       <section id="saudacao" class="secao">
@@ -3577,7 +3690,7 @@ body:has(#capa:not(.oculto)) #botaoMusica {
 <section id="presentes" class="secao">
   <div class="conteudo-secao">
     <div class="icone-presente-pulsante">
-      <i class="fas fa-gift"></i>
+      <img src="presentes.png" alt="Presentes" />
     </div>
     <h2>Sugestões de Presentes</h2>
    <p style="font-size: 1.3rem; color: var(--cinza-medio); max-width: 700px; margin: 0 auto 30px;">
@@ -3613,9 +3726,9 @@ body:has(#capa:not(.oculto)) #botaoMusica {
         <p style="font-size: 1.2rem; color: var(--cinza-medio); margin-bottom: 25px;">
           A lista de presentes, escolhida com amor, foi preparada e encontra-se disponível na loja.
         </p>
-        <button class="btn-mapa-elegante" onclick="window.open('https://maps.app.goo.gl/bQfzsxSV7c9eauG49?g_st=ic')">
-          <i class="fas fa-map-marker-alt"></i> Ver localização da loja
-        </button>
+       <button class="btn-mapa-elegante" onclick="window.open('https://maps.app.goo.gl/bQfzsxSV7c9eauG49?g_st=ic')" style="background-color: #f5f0e6; color: #6d4830; border-color: #f5f0e6;">
+  <i class="fas fa-map-marker-alt"></i> Ver localização da loja
+</button>
       </div>
     </div>
   </div>
@@ -3719,7 +3832,7 @@ body:has(#capa:not(.oculto)) #botaoMusica {
       <!-- Item 1: Convidado não convida -->
       <div style="text-align: center; width: 220px;">
         <div style="background: rgba(255,255,255,0.6); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
-<i class="fas fa-user-plus" style="font-size: 2.2rem; color: #c0c0c0;"></i>        </div>
+<img src="convida.png" alt="Convidado não convida" style="width: 40px; height: auto;" />        </div>
         <p style="margin: 0;">
          <strong style="color: #2c2c2c; font-size: 1rem;"> Convidado não convida</strong><br>
           <span style="color: #2c2c2c; font-size: 0.9rem;">O convite é pessoal e intransferível</span> </p>
@@ -3728,7 +3841,7 @@ body:has(#capa:not(.oculto)) #botaoMusica {
       <!-- Item 2: Seja pontual -->
       <div style="text-align: center; width: 220px;">
         <div style="background: rgba(255,255,255,0.6); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
-          <i class="fas fa-calendar-check" style="font-size: 2.2rem; color: #c0c0c0;"></i>
+          <img src="hora.png" alt="Seja pontual" style="width: 40px; height: auto;" />
         </div>
         <p style="margin: 0;">
          <strong style="color: #2c2c2c; font-size: 1rem;">Seja pontual</strong><br>
@@ -3743,7 +3856,7 @@ body:has(#capa:not(.oculto)) #botaoMusica {
       <!-- Item 3: Tire muitas fotos -->
       <div style="text-align: center; width: 220px;">
         <div style="background: rgba(255,255,255,0.6); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
-          <i class="fas fa-camera" style="font-size: 2.2rem; color: #c0c0c0;"></i>
+          <img src="foto.png" alt="Tire muitas fotos" style="width: 40px; height: auto;" />
         </div>
         <p style="margin: 0;">
           <strong style="color:#2c2c2c; font-size: 1rem;">Tire muitas fotos</strong><br>
@@ -3753,7 +3866,7 @@ body:has(#capa:not(.oculto)) #botaoMusica {
       <!-- Item 4: Aproveite a festa -->
       <div style="text-align: center; width: 220px;">
         <div style="background: rgba(255,255,255,0.6); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
-          <i class="fas fa-glass-cheers" style="font-size: 2.2rem; color: #c0c0c0;"></i>
+          <img src="diverte.png" alt="Tire muitas fotos" style="width: 40px; height: auto;" />
         </div>
         <p style="margin: 0;">
           <strong style="color: #2c2c2c; font-size: 1rem;">Aproveite a festa</strong><br>
@@ -3810,7 +3923,7 @@ body:has(#capa:not(.oculto)) #botaoMusica {
    
       <div class="info-pagamento-elegante">
         <div class="metodo-pagamento-elegante">
-          <i class="fas fa-university"></i>
+          <img src="NIB.png" alt="BCI" class="icone-metodo-pagamento" />
           <div>
             <strong style="font-size: 1.2rem">BCI</strong><br />
             <span style="font-size: 1rem"> <strong>NIB:</strong> 000800002984635110113</span>
@@ -3818,7 +3931,7 @@ body:has(#capa:not(.oculto)) #botaoMusica {
         </div>
 
         <div class="metodo-pagamento-elegante">
-          <i class="fas fa-university"></i>
+          <img src="FNB.png" alt="FNB" class="icone-metodo-pagamento" />
           <div>
             <strong style="font-size: 1.2rem">FNB</strong><br />
             <span style="font-size: 1rem"> <strong>NIB:</strong> 001400004769245610103</span>
@@ -3826,7 +3939,7 @@ body:has(#capa:not(.oculto)) #botaoMusica {
         </div>
 
         <div class="metodo-pagamento-elegante">
-          <i class="fas fa-wallet"></i>
+          <img src="emola.png" alt="E-Mola" class="icone-metodo-pagamento" />
           <div>
             <strong style="font-size: 1.2rem">E-Mola</strong><br />
             <span style="font-size: 1.1rem">+258 87 638 8585</span><br />
@@ -3835,7 +3948,7 @@ body:has(#capa:not(.oculto)) #botaoMusica {
         </div>
 
         <div class="metodo-pagamento-elegante">
-          <i class="fas fa-mobile-alt"></i>
+          <img src="mpesa.png" alt="M-Pesa" class="icone-metodo-pagamento" />
           <div>
             <strong style="font-size: 1.2rem">M-Pesa</strong><br />
             <span style="font-size: 1.1rem">852411948</span><br />
@@ -4370,7 +4483,7 @@ document.getElementById("modalGaleria")?.addEventListener("click", function(e) {
       }
 
       // Efeito de digitação no texto romântico
-    function efeitoDigitacao() {
+   function efeitoDigitacao() {
   const texto = document.querySelector(".texto-destaque");
   if (!texto) return;
 
@@ -4378,37 +4491,12 @@ document.getElementById("modalGaleria")?.addEventListener("click", function(e) {
   texto.textContent = "";
 
   let i = 0;
-  const velocidade = 80; // Velocidade da digitação
-  let noivosMostrados = false;
-  const pontoNoivos = Math.floor(textoOriginal.length * 0.8); // 80% do texto
-
-  function mostrarNoivos() {
-    const noivo = document.querySelector(".noivo");
-    const coracao = document.querySelector(".coracao-central");
-    const noiva = document.querySelector(".noiva");
-
-    if (noivo) noivo.classList.add("visivel");
-
-    setTimeout(() => {
-      if (coracao) coracao.classList.add("visivel");
-    }, 800);
-
-    setTimeout(() => {
-      if (noiva) noiva.classList.add("visivel");
-    }, 1800);
-  }
+  const velocidade = 80;
 
   function digitar() {
     if (i < textoOriginal.length) {
       texto.textContent += textoOriginal.charAt(i);
       i++;
-
-      // Assim que a digitação atinge 80%, mostra o noivo
-      if (!noivosMostrados && i >= pontoNoivos) {
-        noivosMostrados = true;
-        mostrarNoivos();
-      }
-
       setTimeout(digitar, velocidade);
     }
   }
@@ -4423,7 +4511,9 @@ document.getElementById("modalGaleria")?.addEventListener("click", function(e) {
   });
 
   observer.observe(texto);
-}     // ANIMAÇÃO PARA CONTADOR
+}
+
+// ANIMAÇÃO PARA CONTADOR
       function animarContadorAoScroll() {
         const contadorSecao = document.getElementById("contador");
         const contadorItems = document.querySelectorAll(
@@ -4741,7 +4831,37 @@ function animarCalendario() {
 // Chamar a função quando a página carregar
 window.addEventListener('load', function() {
   animarCalendario();
+  animarNoivosAoScroll();
 });
+// ANIMAÇÃO DOS NOIVOS - ATIVADA PELO SCROLL (independente da digitação)
+function animarNoivosAoScroll() {
+  const secaoNoivos = document.getElementById('os-noivos');
+  const noiva = document.querySelector('.noiva');
+  const coracao = document.querySelector('.coracao-overlay');
+  const noivo = document.querySelector('.noivo');
+
+  if (!secaoNoivos) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (noiva) noiva.classList.add('visivel');
+
+        setTimeout(() => {
+          if (coracao) coracao.classList.add('visivel');
+        }, 1000);
+
+        setTimeout(() => {
+          if (noivo) noivo.classList.add('visivel');
+        }, 1800);
+
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.6, rootMargin: '0px 0px -50px 0px' });
+
+  observer.observe(secaoNoivos);
+}
 // ========== GLASS MENU ==========
 // ========== GLASS MENU - VERSÃO CORRIGIDA ==========
 // ========== GLASS MENU - APARECE NA SEÇÃO DE PRESENTES ==========
@@ -4980,6 +5100,8 @@ window.addEventListener("load", function() {
   
 // RSVP com nome e status - dois contactos
 const inputNome = document.getElementById('nomeConvidado');
+const inputAcompanhantes = document.getElementById('acompanhantesConvidado');
+const inputMensagemExtra = document.getElementById('mensagemExtraConvidado');
 
 function enviarConfirmacao(numero) {
   let nome = inputNome.value.trim();
@@ -4989,13 +5111,18 @@ function enviarConfirmacao(numero) {
     return;
   }
 
-  // Pegar o status selecionado
   const statusSelecionado = document.querySelector('input[name="statusPresenca"]:checked');
-  const status = statusSelecionado ? statusSelecionado.value : "Sim, estarei presente";
+  const presenca = statusSelecionado ? statusSelecionado.value : "Sim, estarei presente";
+  const acompanhantes = inputAcompanhantes ? (inputAcompanhantes.value || "0") : "0";
 
-  // Mensagem personalizada com nome e status
-const mensagem = `Olá, eu ${nome} - e ${status} no vosso casamento Lila e Edson, no dia 7 de Novembro de 2026.`;
-  const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+  // Construir mensagem
+  let textoMensagem = `*CONFIRMAÇÃO DE PRESENÇA - CASAMENTO LILA & EDSON*\n\n`;
+  textoMensagem += `*Nome:* ${nome}\n`;
+  textoMensagem += `*Presença:* ${presenca}\n`;
+  textoMensagem += `*Acompanhantes:* ${acompanhantes}\n`;
+  textoMensagem += `\n*Data do evento:* 7 de Novembro de 2026`;
+
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(textoMensagem)}`;
   window.open(url, '_blank');
 }
 
@@ -5162,8 +5289,8 @@ if (btnConfirmarPresenca) {
   height: 42px;
   border: none;
   border-radius: 20px;
-  background: var(--verde-oliva);
-  color: #fff;
+  background: #e2d7cc;
+  color: #2c2c2c;
   font-family: "Cormorant Garamond", serif;
   font-size: 0.9rem;
   font-weight: 700;
@@ -5172,7 +5299,8 @@ if (btnConfirmarPresenca) {
 }
 
 .card-sugestao button:hover:not(:disabled) {
-  background: var(--verde-oliva-suave);
+  background: #d3c4b0;
+  color: #1a1a1a;
   transform: translateY(-2px);
 }
 
@@ -5187,6 +5315,120 @@ if (btnConfirmarPresenca) {
 
 .card-sugestao.escolhido .texto-card span {
   text-decoration: line-through;
+}
+.icone-metodo-pagamento {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  margin-right: 18px;
+  flex-shrink: 0;
+}
+.icone-presente-pulsante img {
+  width: 100px;
+  height: auto;
+  animation: pulsarPresente 1.2s infinite ease-in-out;
+  display: inline-block;
+}
+.arco-noivos {
+  max-width: 480px;
+  height: 640px;
+}
+
+@media (max-width: 600px) {
+  .arco-noivos {
+    max-width: 100%;
+    height: 640px;
+  }
+}
+
+.overlay-info-noivos {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 18px;
+  padding: 20px;
+  padding-top: 215px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.55));
+  z-index: 2;
+  text-align: center;
+}
+
+.overlay-info-noivos .noiva,
+.overlay-info-noivos .noivo {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 1.2s cubic-bezier(0.19, 1, 0.22, 1),
+    transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.overlay-info-noivos .noiva.visivel,
+.overlay-info-noivos .noivo.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nome-overlay {
+  font-family: "Beau Rivage", cursive;
+  font-size: 2.4rem;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  display: block;
+}
+
+.linha-overlay {
+  width: 50px;
+  height: 2px;
+  background: #e2d7cc;
+  margin: 10px auto 12px;
+}
+
+.pais-overlay {
+  color: #ffffff !important;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.coracao-overlay {
+  color: #e21212;
+  font-size: 1.8rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.coracao-overlay.visivel {
+  opacity: 1;
+  transform: scale(1);
+}
+@media (max-width: 600px) {
+  .overlay-info-noivos {
+    padding-top: 280px;
+    padding-bottom: 15px;
+    gap: 8px;
+  }
+
+  .nome-overlay {
+    font-size: 2.3rem;
+  }
+
+  .linha-overlay {
+    width: 35px;
+    margin: 5px auto 6px;
+  }
+
+  .pais-overlay {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .coracao-overlay {
+    font-size: 1.6rem;
+  }
 }
 </style>
 
